@@ -10712,3 +10712,2078 @@ Started GET "/assets/tasks.js?body=1" for 127.0.0.1 at 2015-02-14 01:20:24 +0800
 
 
 Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-02-14 01:20:24 +0800
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddStateToTasks (20150215042447)
+  [1m[35m (1.0ms)[0m  begin transaction
+  [1m[36m (2.0ms)[0m  [1mALTER TABLE "tasks" ADD "state" varchar(255) DEFAULT 'to_do'[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20150215042447"]]
+  [1m[36m (5.0ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.0ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.0ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (1.0ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (2.0ms)[0m  INSERT INTO "tasks" ("content", "created_at", "updated_at") VALUES (?, ?, ?)  [["content", "I am a todo"], ["created_at", "2015-02-15 04:27:17.117561"], ["updated_at", "2015-02-15 04:27:17.117561"]]
+  [1m[36m (6.0ms)[0m  [1mcommit transaction[0m
+  [1m[35mTask Load (0.0ms)[0m  SELECT  "tasks".* FROM "tasks"   ORDER BY "tasks"."id" DESC LIMIT 1
+  [1m[36mTask Load (0.0ms)[0m  [1mSELECT  "tasks".* FROM "tasks"   ORDER BY "tasks"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"   ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36mTask Load (0.0ms)[0m  [1mSELECT  "tasks".* FROM "tasks"   ORDER BY "tasks"."id" DESC LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"   ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  UPDATE "tasks" SET "updated_at" = ?, "user_id" = ? WHERE "tasks"."id" = 4  [["updated_at", "2015-02-15 04:29:53.447503"], ["user_id", 1]]
+  [1m[36m (5.0ms)[0m  [1mcommit transaction[0m
+  [1m[35mTask Load (1.0ms)[0m  SELECT  "tasks".* FROM "tasks"   ORDER BY "tasks"."id" DESC LIMIT 1
+  [1m[36mTask Load (0.0ms)[0m  [1mSELECT "tasks".* FROM "tasks"  WHERE "tasks"."state" = 'to-do'[0m
+  [1m[35mTask Load (0.0ms)[0m  SELECT "tasks".* FROM "tasks"  WHERE "tasks"."state" = 'to_do'
+  [1m[36m (1.0ms)[0m  [1mSELECT COUNT(*) FROM "tasks"  WHERE "tasks"."state" = 'to_do'[0m
+
+
+Started GET "/" for 127.0.0.1 at 2015-02-15 12:34:37 +0800
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PagesController#home as HTML
+  Rendered pages/home.html.erb within layouts/application (6.0ms)
+  Rendered layouts/_header.html.erb (8.0ms)
+Completed 200 OK in 805ms (Views: 784.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/twitter-bootstrap-static/fontawesome.css?body=1" for 127.0.0.1 at 2015-02-15 12:34:38 +0800
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2015-02-15 12:34:38 +0800
+
+
+Started GET "/assets/twitter-bootstrap-static/bootstrap.css?body=1" for 127.0.0.1 at 2015-02-15 12:34:38 +0800
+
+
+Started GET "/assets/tasks.css?body=1" for 127.0.0.1 at 2015-02-15 12:34:38 +0800
+
+
+Started GET "/assets/devise.css?body=1" for 127.0.0.1 at 2015-02-15 12:34:38 +0800
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2015-02-15 12:34:38 +0800
+
+
+Started GET "/assets/font-awesome.css?body=1" for 127.0.0.1 at 2015-02-15 12:34:38 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-15 12:34:38 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-02-15 12:34:38 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-02-15 12:34:38 +0800
+
+
+Started GET "/assets/twitter/bootstrap/transition.js?body=1" for 127.0.0.1 at 2015-02-15 12:34:38 +0800
+
+
+Started GET "/assets/twitter/bootstrap/alert.js?body=1" for 127.0.0.1 at 2015-02-15 12:34:38 +0800
+
+
+Started GET "/assets/twitter/bootstrap/modal.js?body=1" for 127.0.0.1 at 2015-02-15 12:34:38 +0800
+
+
+Started GET "/assets/twitter/bootstrap/dropdown.js?body=1" for 127.0.0.1 at 2015-02-15 12:34:38 +0800
+
+
+Started GET "/assets/twitter/bootstrap/scrollspy.js?body=1" for 127.0.0.1 at 2015-02-15 12:34:39 +0800
+
+
+Started GET "/assets/twitter/bootstrap/tooltip.js?body=1" for 127.0.0.1 at 2015-02-15 12:34:39 +0800
+
+
+Started GET "/assets/twitter/bootstrap/popover.js?body=1" for 127.0.0.1 at 2015-02-15 12:34:39 +0800
+
+
+Started GET "/assets/twitter/bootstrap/tab.js?body=1" for 127.0.0.1 at 2015-02-15 12:34:39 +0800
+
+
+Started GET "/assets/twitter/bootstrap/button.js?body=1" for 127.0.0.1 at 2015-02-15 12:34:39 +0800
+
+
+Started GET "/assets/twitter/bootstrap/collapse.js?body=1" for 127.0.0.1 at 2015-02-15 12:34:39 +0800
+
+
+Started GET "/assets/twitter/bootstrap/carousel.js?body=1" for 127.0.0.1 at 2015-02-15 12:34:39 +0800
+
+
+Started GET "/assets/twitter/bootstrap/affix.js?body=1" for 127.0.0.1 at 2015-02-15 12:34:39 +0800
+
+
+Started GET "/assets/twitter/bootstrap.js?body=1" for 127.0.0.1 at 2015-02-15 12:34:39 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-02-15 12:34:39 +0800
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-02-15 12:34:39 +0800
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2015-02-15 12:34:39 +0800
+
+
+Started GET "/assets/tasks.js?body=1" for 127.0.0.1 at 2015-02-15 12:34:39 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-02-15 12:34:39 +0800
+
+
+Started GET "/assets/fontawesome-webfont.woff2?v=4.3.0" for 127.0.0.1 at 2015-02-15 12:34:39 +0800
+
+
+Started GET "/tasks" for 127.0.0.1 at 2015-02-15 12:34:54 +0800
+Processing by TasksController#index as HTML
+Completed 401 Unauthorized in 13ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2015-02-15 12:34:54 +0800
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (2.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (275.0ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 545ms (Views: 527.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2015-02-15 12:34:55 +0800
+Processing by TasksController#index as HTML
+Completed 401 Unauthorized in 0ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2015-02-15 12:34:55 +0800
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (11.0ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+Completed 200 OK in 234ms (Views: 233.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/twitter-bootstrap-static/fontawesome.css?body=1" for 127.0.0.1 at 2015-02-15 12:34:55 +0800
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2015-02-15 12:34:55 +0800
+
+
+Started GET "/assets/twitter-bootstrap-static/bootstrap.css?body=1" for 127.0.0.1 at 2015-02-15 12:34:55 +0800
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2015-02-15 12:34:55 +0800
+
+
+Started GET "/assets/devise.css?body=1" for 127.0.0.1 at 2015-02-15 12:34:55 +0800
+
+
+Started GET "/assets/font-awesome.css?body=1" for 127.0.0.1 at 2015-02-15 12:34:55 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-15 12:34:55 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-02-15 12:34:55 +0800
+
+
+Started GET "/assets/tasks.css?body=1" for 127.0.0.1 at 2015-02-15 12:34:55 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-02-15 12:34:55 +0800
+
+
+Started GET "/assets/twitter/bootstrap/transition.js?body=1" for 127.0.0.1 at 2015-02-15 12:34:55 +0800
+
+
+Started GET "/assets/twitter/bootstrap/alert.js?body=1" for 127.0.0.1 at 2015-02-15 12:34:55 +0800
+
+
+Started GET "/assets/twitter/bootstrap/modal.js?body=1" for 127.0.0.1 at 2015-02-15 12:34:55 +0800
+
+
+Started GET "/assets/twitter/bootstrap/dropdown.js?body=1" for 127.0.0.1 at 2015-02-15 12:34:55 +0800
+
+
+Started GET "/assets/twitter/bootstrap/scrollspy.js?body=1" for 127.0.0.1 at 2015-02-15 12:34:55 +0800
+
+
+Started GET "/assets/twitter/bootstrap/tab.js?body=1" for 127.0.0.1 at 2015-02-15 12:34:55 +0800
+
+
+Started GET "/assets/twitter/bootstrap/tooltip.js?body=1" for 127.0.0.1 at 2015-02-15 12:34:55 +0800
+
+
+Started GET "/assets/twitter/bootstrap/popover.js?body=1" for 127.0.0.1 at 2015-02-15 12:34:56 +0800
+
+
+Started GET "/assets/twitter/bootstrap/button.js?body=1" for 127.0.0.1 at 2015-02-15 12:34:56 +0800
+
+
+Started GET "/assets/twitter/bootstrap/collapse.js?body=1" for 127.0.0.1 at 2015-02-15 12:34:56 +0800
+
+
+Started GET "/assets/twitter/bootstrap/affix.js?body=1" for 127.0.0.1 at 2015-02-15 12:34:56 +0800
+
+
+Started GET "/assets/twitter/bootstrap/carousel.js?body=1" for 127.0.0.1 at 2015-02-15 12:34:56 +0800
+
+
+Started GET "/assets/twitter/bootstrap.js?body=1" for 127.0.0.1 at 2015-02-15 12:34:56 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-02-15 12:34:56 +0800
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-02-15 12:34:56 +0800
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2015-02-15 12:34:56 +0800
+
+
+Started GET "/assets/tasks.js?body=1" for 127.0.0.1 at 2015-02-15 12:34:56 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-02-15 12:34:56 +0800
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2015-02-15 12:35:52 +0800
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3ecB9A889Jx2mhhUdQmHeXuB017CJPpT9Wqg5uCVEn4=", "user"=>{"email"=>"simonstubben@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."email" = 'simonstubben@gmail.com'  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  UPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = 1  [["current_sign_in_at", "2015-02-15 04:35:52.863060"], ["last_sign_in_at", "2015-02-13 16:29:51.428257"], ["sign_in_count", 6], ["updated_at", "2015-02-15 04:35:52.866061"]]
+  [1m[36m (5.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/tasks
+Completed 302 Found in 300ms (ActiveRecord: 7.0ms)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2015-02-15 12:35:52 +0800
+Processing by TasksController#index as HTML
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mTask Load (0.0ms)[0m  [1mSELECT "tasks".* FROM "tasks"  WHERE "tasks"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered tasks/index.html.erb within layouts/application (20.0ms)
+  Rendered layouts/_header.html.erb (2.0ms)
+Completed 200 OK in 675ms (Views: 630.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/twitter-bootstrap-static/bootstrap.css?body=1" for 127.0.0.1 at 2015-02-15 12:35:53 +0800
+
+
+Started GET "/assets/twitter-bootstrap-static/fontawesome.css?body=1" for 127.0.0.1 at 2015-02-15 12:35:53 +0800
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2015-02-15 12:35:53 +0800
+
+
+Started GET "/assets/devise.css?body=1" for 127.0.0.1 at 2015-02-15 12:35:53 +0800
+
+
+Started GET "/assets/font-awesome.css?body=1" for 127.0.0.1 at 2015-02-15 12:35:53 +0800
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2015-02-15 12:35:53 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-15 12:35:53 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-02-15 12:35:53 +0800
+
+
+Started GET "/assets/tasks.css?body=1" for 127.0.0.1 at 2015-02-15 12:35:53 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-02-15 12:35:53 +0800
+
+
+Started GET "/assets/twitter/bootstrap/transition.js?body=1" for 127.0.0.1 at 2015-02-15 12:35:53 +0800
+
+
+Started GET "/assets/twitter/bootstrap/alert.js?body=1" for 127.0.0.1 at 2015-02-15 12:35:53 +0800
+
+
+Started GET "/assets/twitter/bootstrap/modal.js?body=1" for 127.0.0.1 at 2015-02-15 12:35:53 +0800
+
+
+Started GET "/assets/twitter/bootstrap/dropdown.js?body=1" for 127.0.0.1 at 2015-02-15 12:35:54 +0800
+
+
+Started GET "/assets/twitter/bootstrap/scrollspy.js?body=1" for 127.0.0.1 at 2015-02-15 12:35:54 +0800
+
+
+Started GET "/assets/twitter/bootstrap/tab.js?body=1" for 127.0.0.1 at 2015-02-15 12:35:54 +0800
+
+
+Started GET "/assets/twitter/bootstrap/tooltip.js?body=1" for 127.0.0.1 at 2015-02-15 12:35:54 +0800
+
+
+Started GET "/assets/twitter/bootstrap/popover.js?body=1" for 127.0.0.1 at 2015-02-15 12:35:54 +0800
+
+
+Started GET "/assets/twitter/bootstrap/button.js?body=1" for 127.0.0.1 at 2015-02-15 12:35:54 +0800
+
+
+Started GET "/assets/twitter/bootstrap/collapse.js?body=1" for 127.0.0.1 at 2015-02-15 12:35:54 +0800
+
+
+Started GET "/assets/twitter/bootstrap/carousel.js?body=1" for 127.0.0.1 at 2015-02-15 12:35:54 +0800
+
+
+Started GET "/assets/twitter/bootstrap/affix.js?body=1" for 127.0.0.1 at 2015-02-15 12:35:54 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-02-15 12:35:54 +0800
+
+
+Started GET "/assets/twitter/bootstrap.js?body=1" for 127.0.0.1 at 2015-02-15 12:35:54 +0800
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-02-15 12:35:54 +0800
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2015-02-15 12:35:54 +0800
+
+
+Started GET "/assets/tasks.js?body=1" for 127.0.0.1 at 2015-02-15 12:35:54 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-02-15 12:35:54 +0800
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2015-02-15 12:35:55 +0800
+Processing by TasksController#new as HTML
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered tasks/_form.html.erb (43.0ms)
+  Rendered tasks/new.html.erb within layouts/application (49.0ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 332ms (Views: 323.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2015-02-15 12:36:21 +0800
+Processing by TasksController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mTask Load (0.0ms)[0m  SELECT "tasks".* FROM "tasks"  WHERE "tasks"."user_id" = ?  [["user_id", 1]]
+  Rendered tasks/index.html.erb within layouts/application (3.0ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 240ms (Views: 231.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/tasks/4" for 127.0.0.1 at 2015-02-15 12:36:23 +0800
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mTask Load (0.0ms)[0m  SELECT  "tasks".* FROM "tasks"  WHERE "tasks"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered tasks/show.html.erb within layouts/application (3.0ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 278ms (Views: 264.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tasks/4" for 127.0.0.1 at 2015-02-15 12:36:47 +0800
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mTask Load (0.0ms)[0m  SELECT  "tasks".* FROM "tasks"  WHERE "tasks"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered tasks/show.html.erb within layouts/application (2.0ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 356ms (Views: 344.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/twitter-bootstrap-static/fontawesome.css?body=1" for 127.0.0.1 at 2015-02-15 12:36:47 +0800
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2015-02-15 12:36:47 +0800
+
+
+Started GET "/assets/devise.css?body=1" for 127.0.0.1 at 2015-02-15 12:36:47 +0800
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2015-02-15 12:36:47 +0800
+
+
+Started GET "/assets/tasks.css?body=1" for 127.0.0.1 at 2015-02-15 12:36:47 +0800
+
+
+Started GET "/assets/twitter-bootstrap-static/bootstrap.css?body=1" for 127.0.0.1 at 2015-02-15 12:36:47 +0800
+
+
+Started GET "/assets/font-awesome.css?body=1" for 127.0.0.1 at 2015-02-15 12:36:47 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-15 12:36:47 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-02-15 12:36:47 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-02-15 12:36:47 +0800
+
+
+Started GET "/assets/twitter/bootstrap/transition.js?body=1" for 127.0.0.1 at 2015-02-15 12:36:47 +0800
+
+
+Started GET "/assets/twitter/bootstrap/alert.js?body=1" for 127.0.0.1 at 2015-02-15 12:36:47 +0800
+
+
+Started GET "/assets/twitter/bootstrap/modal.js?body=1" for 127.0.0.1 at 2015-02-15 12:36:47 +0800
+
+
+Started GET "/assets/twitter/bootstrap/dropdown.js?body=1" for 127.0.0.1 at 2015-02-15 12:36:47 +0800
+
+
+Started GET "/assets/twitter/bootstrap/scrollspy.js?body=1" for 127.0.0.1 at 2015-02-15 12:36:47 +0800
+
+
+Started GET "/assets/twitter/bootstrap/tooltip.js?body=1" for 127.0.0.1 at 2015-02-15 12:36:47 +0800
+
+
+Started GET "/assets/twitter/bootstrap/tab.js?body=1" for 127.0.0.1 at 2015-02-15 12:36:47 +0800
+
+
+Started GET "/assets/twitter/bootstrap/popover.js?body=1" for 127.0.0.1 at 2015-02-15 12:36:47 +0800
+
+
+Started GET "/assets/twitter/bootstrap/button.js?body=1" for 127.0.0.1 at 2015-02-15 12:36:47 +0800
+
+
+Started GET "/assets/twitter/bootstrap/collapse.js?body=1" for 127.0.0.1 at 2015-02-15 12:36:47 +0800
+
+
+Started GET "/assets/twitter/bootstrap/carousel.js?body=1" for 127.0.0.1 at 2015-02-15 12:36:47 +0800
+
+
+Started GET "/assets/twitter/bootstrap/affix.js?body=1" for 127.0.0.1 at 2015-02-15 12:36:47 +0800
+
+
+Started GET "/assets/twitter/bootstrap.js?body=1" for 127.0.0.1 at 2015-02-15 12:36:47 +0800
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-02-15 12:36:47 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-02-15 12:36:47 +0800
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2015-02-15 12:36:47 +0800
+
+
+Started GET "/assets/tasks.js?body=1" for 127.0.0.1 at 2015-02-15 12:36:47 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-02-15 12:36:47 +0800
+
+
+Started GET "/tasks" for 127.0.0.1 at 2015-02-15 12:38:26 +0800
+Processing by TasksController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mTask Load (0.0ms)[0m  SELECT "tasks".* FROM "tasks"  WHERE "tasks"."user_id" = ?  [["user_id", 1]]
+  Rendered tasks/index.html.erb within layouts/application (6.0ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+Completed 200 OK in 541ms (Views: 532.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2015-02-15 12:40:24 +0800
+Processing by TasksController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mTask Load (1.0ms)[0m  SELECT "tasks".* FROM "tasks"  WHERE "tasks"."user_id" = ?  [["user_id", 1]]
+  Rendered tasks/index.html.erb within layouts/application (9.0ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 543ms (Views: 533.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/twitter-bootstrap-static/fontawesome.css?body=1" for 127.0.0.1 at 2015-02-15 12:40:24 +0800
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2015-02-15 12:40:24 +0800
+
+
+Started GET "/assets/tasks.css?body=1" for 127.0.0.1 at 2015-02-15 12:40:25 +0800
+
+
+Started GET "/assets/devise.css?body=1" for 127.0.0.1 at 2015-02-15 12:40:25 +0800
+
+
+Started GET "/assets/twitter-bootstrap-static/bootstrap.css?body=1" for 127.0.0.1 at 2015-02-15 12:40:25 +0800
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2015-02-15 12:40:25 +0800
+
+
+Started GET "/assets/font-awesome.css?body=1" for 127.0.0.1 at 2015-02-15 12:40:25 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-15 12:40:25 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-02-15 12:40:25 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-02-15 12:40:25 +0800
+
+
+Started GET "/assets/twitter/bootstrap/transition.js?body=1" for 127.0.0.1 at 2015-02-15 12:40:25 +0800
+
+
+Started GET "/assets/twitter/bootstrap/alert.js?body=1" for 127.0.0.1 at 2015-02-15 12:40:25 +0800
+
+
+Started GET "/assets/twitter/bootstrap/modal.js?body=1" for 127.0.0.1 at 2015-02-15 12:40:25 +0800
+
+
+Started GET "/assets/twitter/bootstrap/dropdown.js?body=1" for 127.0.0.1 at 2015-02-15 12:40:25 +0800
+
+
+Started GET "/assets/twitter/bootstrap/scrollspy.js?body=1" for 127.0.0.1 at 2015-02-15 12:40:25 +0800
+
+
+Started GET "/assets/twitter/bootstrap/tab.js?body=1" for 127.0.0.1 at 2015-02-15 12:40:25 +0800
+
+
+Started GET "/assets/twitter/bootstrap/tooltip.js?body=1" for 127.0.0.1 at 2015-02-15 12:40:25 +0800
+
+
+Started GET "/assets/twitter/bootstrap/popover.js?body=1" for 127.0.0.1 at 2015-02-15 12:40:25 +0800
+
+
+Started GET "/assets/twitter/bootstrap/button.js?body=1" for 127.0.0.1 at 2015-02-15 12:40:25 +0800
+
+
+Started GET "/assets/twitter/bootstrap/collapse.js?body=1" for 127.0.0.1 at 2015-02-15 12:40:25 +0800
+
+
+Started GET "/assets/twitter/bootstrap/carousel.js?body=1" for 127.0.0.1 at 2015-02-15 12:40:25 +0800
+
+
+Started GET "/assets/twitter/bootstrap/affix.js?body=1" for 127.0.0.1 at 2015-02-15 12:40:25 +0800
+
+
+Started GET "/assets/twitter/bootstrap.js?body=1" for 127.0.0.1 at 2015-02-15 12:40:25 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-02-15 12:40:25 +0800
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-02-15 12:40:25 +0800
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2015-02-15 12:40:25 +0800
+
+
+Started GET "/assets/tasks.js?body=1" for 127.0.0.1 at 2015-02-15 12:40:25 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-02-15 12:40:25 +0800
+
+
+Started GET "/tasks" for 127.0.0.1 at 2015-02-15 12:43:26 +0800
+Processing by TasksController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mTask Load (1.0ms)[0m  SELECT "tasks".* FROM "tasks"  WHERE "tasks"."user_id" = ?  [["user_id", 1]]
+  Rendered tasks/index.html.erb within layouts/application (9.0ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 303ms (Views: 294.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/twitter-bootstrap-static/bootstrap.css?body=1" for 127.0.0.1 at 2015-02-15 12:43:27 +0800
+
+
+Started GET "/assets/tasks.css?body=1" for 127.0.0.1 at 2015-02-15 12:43:27 +0800
+
+
+Started GET "/assets/twitter-bootstrap-static/fontawesome.css?body=1" for 127.0.0.1 at 2015-02-15 12:43:27 +0800
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2015-02-15 12:43:27 +0800
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2015-02-15 12:43:27 +0800
+
+
+Started GET "/assets/devise.css?body=1" for 127.0.0.1 at 2015-02-15 12:43:27 +0800
+
+
+Started GET "/assets/font-awesome.css?body=1" for 127.0.0.1 at 2015-02-15 12:43:27 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-15 12:43:27 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-02-15 12:43:27 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-02-15 12:43:27 +0800
+
+
+Started GET "/assets/twitter/bootstrap/alert.js?body=1" for 127.0.0.1 at 2015-02-15 12:43:27 +0800
+
+
+Started GET "/assets/twitter/bootstrap/transition.js?body=1" for 127.0.0.1 at 2015-02-15 12:43:27 +0800
+
+
+Started GET "/assets/twitter/bootstrap/modal.js?body=1" for 127.0.0.1 at 2015-02-15 12:43:27 +0800
+
+
+Started GET "/assets/twitter/bootstrap/dropdown.js?body=1" for 127.0.0.1 at 2015-02-15 12:43:27 +0800
+
+
+Started GET "/assets/twitter/bootstrap/scrollspy.js?body=1" for 127.0.0.1 at 2015-02-15 12:43:27 +0800
+
+
+Started GET "/assets/twitter/bootstrap/tab.js?body=1" for 127.0.0.1 at 2015-02-15 12:43:27 +0800
+
+
+Started GET "/assets/twitter/bootstrap/tooltip.js?body=1" for 127.0.0.1 at 2015-02-15 12:43:27 +0800
+
+
+Started GET "/assets/twitter/bootstrap/popover.js?body=1" for 127.0.0.1 at 2015-02-15 12:43:27 +0800
+
+
+Started GET "/assets/twitter/bootstrap/button.js?body=1" for 127.0.0.1 at 2015-02-15 12:43:27 +0800
+
+
+Started GET "/assets/twitter/bootstrap/collapse.js?body=1" for 127.0.0.1 at 2015-02-15 12:43:27 +0800
+
+
+Started GET "/assets/twitter/bootstrap/carousel.js?body=1" for 127.0.0.1 at 2015-02-15 12:43:27 +0800
+
+
+Started GET "/assets/twitter/bootstrap/affix.js?body=1" for 127.0.0.1 at 2015-02-15 12:43:27 +0800
+
+
+Started GET "/assets/twitter/bootstrap.js?body=1" for 127.0.0.1 at 2015-02-15 12:43:27 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-02-15 12:43:27 +0800
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-02-15 12:43:27 +0800
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2015-02-15 12:43:27 +0800
+
+
+Started GET "/assets/tasks.js?body=1" for 127.0.0.1 at 2015-02-15 12:43:27 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-02-15 12:43:27 +0800
+
+
+Started GET "/tasks" for 127.0.0.1 at 2015-02-15 12:43:28 +0800
+Processing by TasksController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mTask Load (1.0ms)[0m  SELECT "tasks".* FROM "tasks"  WHERE "tasks"."user_id" = ?  [["user_id", 1]]
+  Rendered tasks/index.html.erb within layouts/application (6.0ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 359ms (Views: 350.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/twitter-bootstrap-static/fontawesome.css?body=1" for 127.0.0.1 at 2015-02-15 12:43:29 +0800
+
+
+Started GET "/assets/twitter-bootstrap-static/bootstrap.css?body=1" for 127.0.0.1 at 2015-02-15 12:43:29 +0800
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2015-02-15 12:43:29 +0800
+
+
+Started GET "/assets/devise.css?body=1" for 127.0.0.1 at 2015-02-15 12:43:29 +0800
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2015-02-15 12:43:29 +0800
+
+
+Started GET "/assets/tasks.css?body=1" for 127.0.0.1 at 2015-02-15 12:43:29 +0800
+
+
+Started GET "/assets/font-awesome.css?body=1" for 127.0.0.1 at 2015-02-15 12:43:29 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-15 12:43:29 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-02-15 12:43:29 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-02-15 12:43:29 +0800
+
+
+Started GET "/assets/twitter/bootstrap/transition.js?body=1" for 127.0.0.1 at 2015-02-15 12:43:29 +0800
+
+
+Started GET "/assets/twitter/bootstrap/alert.js?body=1" for 127.0.0.1 at 2015-02-15 12:43:29 +0800
+
+
+Started GET "/assets/twitter/bootstrap/modal.js?body=1" for 127.0.0.1 at 2015-02-15 12:43:29 +0800
+
+
+Started GET "/assets/twitter/bootstrap/dropdown.js?body=1" for 127.0.0.1 at 2015-02-15 12:43:29 +0800
+
+
+Started GET "/assets/twitter/bootstrap/scrollspy.js?body=1" for 127.0.0.1 at 2015-02-15 12:43:29 +0800
+
+
+Started GET "/assets/twitter/bootstrap/tab.js?body=1" for 127.0.0.1 at 2015-02-15 12:43:29 +0800
+
+
+Started GET "/assets/twitter/bootstrap/tooltip.js?body=1" for 127.0.0.1 at 2015-02-15 12:43:29 +0800
+
+
+Started GET "/assets/twitter/bootstrap/popover.js?body=1" for 127.0.0.1 at 2015-02-15 12:43:29 +0800
+
+
+Started GET "/assets/twitter/bootstrap/button.js?body=1" for 127.0.0.1 at 2015-02-15 12:43:29 +0800
+
+
+Started GET "/assets/twitter/bootstrap/collapse.js?body=1" for 127.0.0.1 at 2015-02-15 12:43:29 +0800
+
+
+Started GET "/assets/twitter/bootstrap/carousel.js?body=1" for 127.0.0.1 at 2015-02-15 12:43:29 +0800
+
+
+Started GET "/assets/twitter/bootstrap/affix.js?body=1" for 127.0.0.1 at 2015-02-15 12:43:29 +0800
+
+
+Started GET "/assets/twitter/bootstrap.js?body=1" for 127.0.0.1 at 2015-02-15 12:43:29 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-02-15 12:43:29 +0800
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2015-02-15 12:43:29 +0800
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-02-15 12:43:29 +0800
+
+
+Started GET "/assets/tasks.js?body=1" for 127.0.0.1 at 2015-02-15 12:43:29 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-02-15 12:43:29 +0800
+
+
+Started GET "/tasks" for 127.0.0.1 at 2015-02-15 12:43:57 +0800
+Processing by TasksController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mTask Load (1.0ms)[0m  SELECT "tasks".* FROM "tasks"  WHERE "tasks"."user_id" = ?  [["user_id", 1]]
+  Rendered tasks/index.html.erb within layouts/application (12.0ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+Completed 200 OK in 379ms (Views: 369.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2015-02-15 12:43:58 +0800
+
+
+Started GET "/assets/twitter-bootstrap-static/bootstrap.css?body=1" for 127.0.0.1 at 2015-02-15 12:43:58 +0800
+
+
+Started GET "/assets/tasks.css?body=1" for 127.0.0.1 at 2015-02-15 12:43:58 +0800
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2015-02-15 12:43:58 +0800
+
+
+Started GET "/assets/devise.css?body=1" for 127.0.0.1 at 2015-02-15 12:43:58 +0800
+
+
+Started GET "/assets/twitter-bootstrap-static/fontawesome.css?body=1" for 127.0.0.1 at 2015-02-15 12:43:58 +0800
+
+
+Started GET "/assets/font-awesome.css?body=1" for 127.0.0.1 at 2015-02-15 12:43:58 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-15 12:43:58 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-02-15 12:43:58 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-02-15 12:43:58 +0800
+
+
+Started GET "/assets/twitter/bootstrap/transition.js?body=1" for 127.0.0.1 at 2015-02-15 12:43:58 +0800
+
+
+Started GET "/assets/twitter/bootstrap/alert.js?body=1" for 127.0.0.1 at 2015-02-15 12:43:58 +0800
+
+
+Started GET "/assets/twitter/bootstrap/modal.js?body=1" for 127.0.0.1 at 2015-02-15 12:43:58 +0800
+
+
+Started GET "/assets/twitter/bootstrap/dropdown.js?body=1" for 127.0.0.1 at 2015-02-15 12:43:58 +0800
+
+
+Started GET "/assets/twitter/bootstrap/scrollspy.js?body=1" for 127.0.0.1 at 2015-02-15 12:43:58 +0800
+
+
+Started GET "/assets/twitter/bootstrap/tab.js?body=1" for 127.0.0.1 at 2015-02-15 12:43:58 +0800
+
+
+Started GET "/assets/twitter/bootstrap/tooltip.js?body=1" for 127.0.0.1 at 2015-02-15 12:43:58 +0800
+
+
+Started GET "/assets/twitter/bootstrap/button.js?body=1" for 127.0.0.1 at 2015-02-15 12:43:58 +0800
+
+
+Started GET "/assets/twitter/bootstrap/popover.js?body=1" for 127.0.0.1 at 2015-02-15 12:43:58 +0800
+
+
+Started GET "/assets/twitter/bootstrap/collapse.js?body=1" for 127.0.0.1 at 2015-02-15 12:43:58 +0800
+
+
+Started GET "/assets/twitter/bootstrap/carousel.js?body=1" for 127.0.0.1 at 2015-02-15 12:43:58 +0800
+
+
+Started GET "/assets/twitter/bootstrap/affix.js?body=1" for 127.0.0.1 at 2015-02-15 12:43:58 +0800
+
+
+Started GET "/assets/twitter/bootstrap.js?body=1" for 127.0.0.1 at 2015-02-15 12:43:58 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-02-15 12:43:58 +0800
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-02-15 12:43:58 +0800
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2015-02-15 12:43:58 +0800
+
+
+Started GET "/assets/tasks.js?body=1" for 127.0.0.1 at 2015-02-15 12:43:58 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-02-15 12:43:58 +0800
+
+
+Started GET "/tasks" for 127.0.0.1 at 2015-02-15 12:44:14 +0800
+Processing by TasksController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mTask Load (0.0ms)[0m  SELECT "tasks".* FROM "tasks"  WHERE "tasks"."user_id" = ?  [["user_id", 1]]
+  Rendered tasks/index.html.erb within layouts/application (9.0ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 443ms (Views: 434.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/twitter-bootstrap-static/fontawesome.css?body=1" for 127.0.0.1 at 2015-02-15 12:44:15 +0800
+
+
+Started GET "/assets/twitter-bootstrap-static/bootstrap.css?body=1" for 127.0.0.1 at 2015-02-15 12:44:15 +0800
+
+
+Started GET "/assets/devise.css?body=1" for 127.0.0.1 at 2015-02-15 12:44:15 +0800
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2015-02-15 12:44:15 +0800
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2015-02-15 12:44:15 +0800
+
+
+Started GET "/assets/tasks.css?body=1" for 127.0.0.1 at 2015-02-15 12:44:15 +0800
+
+
+Started GET "/assets/font-awesome.css?body=1" for 127.0.0.1 at 2015-02-15 12:44:15 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-15 12:44:15 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-02-15 12:44:15 +0800
+
+
+Started GET "/assets/twitter/bootstrap/transition.js?body=1" for 127.0.0.1 at 2015-02-15 12:44:15 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-02-15 12:44:15 +0800
+
+
+Started GET "/assets/twitter/bootstrap/alert.js?body=1" for 127.0.0.1 at 2015-02-15 12:44:15 +0800
+
+
+Started GET "/assets/twitter/bootstrap/modal.js?body=1" for 127.0.0.1 at 2015-02-15 12:44:15 +0800
+
+
+Started GET "/assets/twitter/bootstrap/dropdown.js?body=1" for 127.0.0.1 at 2015-02-15 12:44:15 +0800
+
+
+Started GET "/assets/twitter/bootstrap/scrollspy.js?body=1" for 127.0.0.1 at 2015-02-15 12:44:15 +0800
+
+
+Started GET "/assets/twitter/bootstrap/tab.js?body=1" for 127.0.0.1 at 2015-02-15 12:44:15 +0800
+
+
+Started GET "/assets/twitter/bootstrap/tooltip.js?body=1" for 127.0.0.1 at 2015-02-15 12:44:15 +0800
+
+
+Started GET "/assets/twitter/bootstrap/popover.js?body=1" for 127.0.0.1 at 2015-02-15 12:44:15 +0800
+
+
+Started GET "/assets/twitter/bootstrap/button.js?body=1" for 127.0.0.1 at 2015-02-15 12:44:15 +0800
+
+
+Started GET "/assets/twitter/bootstrap/collapse.js?body=1" for 127.0.0.1 at 2015-02-15 12:44:15 +0800
+
+
+Started GET "/assets/twitter/bootstrap/carousel.js?body=1" for 127.0.0.1 at 2015-02-15 12:44:15 +0800
+
+
+Started GET "/assets/twitter/bootstrap/affix.js?body=1" for 127.0.0.1 at 2015-02-15 12:44:15 +0800
+
+
+Started GET "/assets/twitter/bootstrap.js?body=1" for 127.0.0.1 at 2015-02-15 12:44:15 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-02-15 12:44:15 +0800
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-02-15 12:44:15 +0800
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2015-02-15 12:44:15 +0800
+
+
+Started GET "/assets/tasks.js?body=1" for 127.0.0.1 at 2015-02-15 12:44:15 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-02-15 12:44:15 +0800
+
+
+Started GET "/tasks" for 127.0.0.1 at 2015-02-15 12:44:22 +0800
+Processing by TasksController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mTask Load (0.0ms)[0m  SELECT "tasks".* FROM "tasks"  WHERE "tasks"."user_id" = ?  [["user_id", 1]]
+  Rendered tasks/index.html.erb within layouts/application (8.0ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 507ms (Views: 497.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/devise.css?body=1" for 127.0.0.1 at 2015-02-15 12:44:23 +0800
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2015-02-15 12:44:23 +0800
+
+
+Started GET "/assets/twitter-bootstrap-static/fontawesome.css?body=1" for 127.0.0.1 at 2015-02-15 12:44:23 +0800
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2015-02-15 12:44:23 +0800
+
+
+Started GET "/assets/tasks.css?body=1" for 127.0.0.1 at 2015-02-15 12:44:23 +0800
+
+
+Started GET "/assets/twitter-bootstrap-static/bootstrap.css?body=1" for 127.0.0.1 at 2015-02-15 12:44:23 +0800
+
+
+Started GET "/assets/font-awesome.css?body=1" for 127.0.0.1 at 2015-02-15 12:44:23 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-15 12:44:23 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-02-15 12:44:23 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-02-15 12:44:23 +0800
+
+
+Started GET "/assets/twitter/bootstrap/transition.js?body=1" for 127.0.0.1 at 2015-02-15 12:44:23 +0800
+
+
+Started GET "/assets/twitter/bootstrap/alert.js?body=1" for 127.0.0.1 at 2015-02-15 12:44:23 +0800
+
+
+Started GET "/assets/twitter/bootstrap/modal.js?body=1" for 127.0.0.1 at 2015-02-15 12:44:23 +0800
+
+
+Started GET "/assets/twitter/bootstrap/dropdown.js?body=1" for 127.0.0.1 at 2015-02-15 12:44:23 +0800
+
+
+Started GET "/assets/twitter/bootstrap/scrollspy.js?body=1" for 127.0.0.1 at 2015-02-15 12:44:23 +0800
+
+
+Started GET "/assets/twitter/bootstrap/tab.js?body=1" for 127.0.0.1 at 2015-02-15 12:44:23 +0800
+
+
+Started GET "/assets/twitter/bootstrap/tooltip.js?body=1" for 127.0.0.1 at 2015-02-15 12:44:23 +0800
+
+
+Started GET "/assets/twitter/bootstrap/popover.js?body=1" for 127.0.0.1 at 2015-02-15 12:44:23 +0800
+
+
+Started GET "/assets/twitter/bootstrap/button.js?body=1" for 127.0.0.1 at 2015-02-15 12:44:23 +0800
+
+
+Started GET "/assets/twitter/bootstrap/carousel.js?body=1" for 127.0.0.1 at 2015-02-15 12:44:23 +0800
+
+
+Started GET "/assets/twitter/bootstrap/collapse.js?body=1" for 127.0.0.1 at 2015-02-15 12:44:23 +0800
+
+
+Started GET "/assets/twitter/bootstrap/affix.js?body=1" for 127.0.0.1 at 2015-02-15 12:44:23 +0800
+
+
+Started GET "/assets/twitter/bootstrap.js?body=1" for 127.0.0.1 at 2015-02-15 12:44:23 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-02-15 12:44:23 +0800
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-02-15 12:44:23 +0800
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2015-02-15 12:44:23 +0800
+
+
+Started GET "/assets/tasks.js?body=1" for 127.0.0.1 at 2015-02-15 12:44:23 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-02-15 12:44:23 +0800
+
+
+Started GET "/tasks" for 127.0.0.1 at 2015-02-15 12:45:33 +0800
+Processing by TasksController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mTask Load (0.0ms)[0m  SELECT "tasks".* FROM "tasks"  WHERE "tasks"."user_id" = ?  [["user_id", 1]]
+  Rendered tasks/index.html.erb within layouts/application (4.0ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+Completed 200 OK in 237ms (Views: 234.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2015-02-15 12:45:33 +0800
+
+
+Started GET "/assets/devise.css?body=1" for 127.0.0.1 at 2015-02-15 12:45:33 +0800
+
+
+Started GET "/assets/twitter-bootstrap-static/fontawesome.css?body=1" for 127.0.0.1 at 2015-02-15 12:45:33 +0800
+
+
+Started GET "/assets/tasks.css?body=1" for 127.0.0.1 at 2015-02-15 12:45:33 +0800
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2015-02-15 12:45:33 +0800
+
+
+Started GET "/assets/twitter-bootstrap-static/bootstrap.css?body=1" for 127.0.0.1 at 2015-02-15 12:45:33 +0800
+
+
+Started GET "/assets/font-awesome.css?body=1" for 127.0.0.1 at 2015-02-15 12:45:33 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-15 12:45:33 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-02-15 12:45:33 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-02-15 12:45:33 +0800
+
+
+Started GET "/assets/twitter/bootstrap/transition.js?body=1" for 127.0.0.1 at 2015-02-15 12:45:33 +0800
+
+
+Started GET "/assets/twitter/bootstrap/alert.js?body=1" for 127.0.0.1 at 2015-02-15 12:45:33 +0800
+
+
+Started GET "/assets/twitter/bootstrap/modal.js?body=1" for 127.0.0.1 at 2015-02-15 12:45:33 +0800
+
+
+Started GET "/assets/twitter/bootstrap/dropdown.js?body=1" for 127.0.0.1 at 2015-02-15 12:45:33 +0800
+
+
+Started GET "/assets/twitter/bootstrap/tab.js?body=1" for 127.0.0.1 at 2015-02-15 12:45:33 +0800
+
+
+Started GET "/assets/twitter/bootstrap/scrollspy.js?body=1" for 127.0.0.1 at 2015-02-15 12:45:33 +0800
+
+
+Started GET "/assets/twitter/bootstrap/tooltip.js?body=1" for 127.0.0.1 at 2015-02-15 12:45:33 +0800
+
+
+Started GET "/assets/twitter/bootstrap/popover.js?body=1" for 127.0.0.1 at 2015-02-15 12:45:33 +0800
+
+
+Started GET "/assets/twitter/bootstrap/button.js?body=1" for 127.0.0.1 at 2015-02-15 12:45:33 +0800
+
+
+Started GET "/assets/twitter/bootstrap/collapse.js?body=1" for 127.0.0.1 at 2015-02-15 12:45:33 +0800
+
+
+Started GET "/assets/twitter/bootstrap/carousel.js?body=1" for 127.0.0.1 at 2015-02-15 12:45:33 +0800
+
+
+Started GET "/assets/twitter/bootstrap/affix.js?body=1" for 127.0.0.1 at 2015-02-15 12:45:33 +0800
+
+
+Started GET "/assets/twitter/bootstrap.js?body=1" for 127.0.0.1 at 2015-02-15 12:45:33 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-02-15 12:45:33 +0800
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-02-15 12:45:34 +0800
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2015-02-15 12:45:34 +0800
+
+
+Started GET "/assets/tasks.js?body=1" for 127.0.0.1 at 2015-02-15 12:45:34 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-02-15 12:45:34 +0800
+
+
+Started GET "/tasks" for 127.0.0.1 at 2015-02-15 12:45:34 +0800
+Processing by TasksController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mTask Load (1.0ms)[0m  SELECT "tasks".* FROM "tasks"  WHERE "tasks"."user_id" = ?  [["user_id", 1]]
+  Rendered tasks/index.html.erb within layouts/application (6.0ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 496ms (Views: 487.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/twitter-bootstrap-static/fontawesome.css?body=1" for 127.0.0.1 at 2015-02-15 12:45:35 +0800
+
+
+Started GET "/assets/twitter-bootstrap-static/bootstrap.css?body=1" for 127.0.0.1 at 2015-02-15 12:45:35 +0800
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2015-02-15 12:45:35 +0800
+
+
+Started GET "/assets/devise.css?body=1" for 127.0.0.1 at 2015-02-15 12:45:35 +0800
+
+
+Started GET "/assets/tasks.css?body=1" for 127.0.0.1 at 2015-02-15 12:45:35 +0800
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2015-02-15 12:45:35 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-15 12:45:35 +0800
+
+
+Started GET "/assets/font-awesome.css?body=1" for 127.0.0.1 at 2015-02-15 12:45:35 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-02-15 12:45:35 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-02-15 12:45:35 +0800
+
+
+Started GET "/assets/twitter/bootstrap/transition.js?body=1" for 127.0.0.1 at 2015-02-15 12:45:35 +0800
+
+
+Started GET "/assets/twitter/bootstrap/alert.js?body=1" for 127.0.0.1 at 2015-02-15 12:45:35 +0800
+
+
+Started GET "/assets/twitter/bootstrap/modal.js?body=1" for 127.0.0.1 at 2015-02-15 12:45:35 +0800
+
+
+Started GET "/assets/twitter/bootstrap/dropdown.js?body=1" for 127.0.0.1 at 2015-02-15 12:45:35 +0800
+
+
+Started GET "/assets/twitter/bootstrap/scrollspy.js?body=1" for 127.0.0.1 at 2015-02-15 12:45:35 +0800
+
+
+Started GET "/assets/twitter/bootstrap/tab.js?body=1" for 127.0.0.1 at 2015-02-15 12:45:35 +0800
+
+
+Started GET "/assets/twitter/bootstrap/tooltip.js?body=1" for 127.0.0.1 at 2015-02-15 12:45:35 +0800
+
+
+Started GET "/assets/twitter/bootstrap/popover.js?body=1" for 127.0.0.1 at 2015-02-15 12:45:35 +0800
+
+
+Started GET "/assets/twitter/bootstrap/button.js?body=1" for 127.0.0.1 at 2015-02-15 12:45:35 +0800
+
+
+Started GET "/assets/twitter/bootstrap/collapse.js?body=1" for 127.0.0.1 at 2015-02-15 12:45:35 +0800
+
+
+Started GET "/assets/twitter/bootstrap/carousel.js?body=1" for 127.0.0.1 at 2015-02-15 12:45:35 +0800
+
+
+Started GET "/assets/twitter/bootstrap/affix.js?body=1" for 127.0.0.1 at 2015-02-15 12:45:35 +0800
+
+
+Started GET "/assets/twitter/bootstrap.js?body=1" for 127.0.0.1 at 2015-02-15 12:45:35 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-02-15 12:45:35 +0800
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-02-15 12:45:35 +0800
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2015-02-15 12:45:35 +0800
+
+
+Started GET "/assets/tasks.js?body=1" for 127.0.0.1 at 2015-02-15 12:45:35 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-02-15 12:45:35 +0800
+
+
+Started GET "/tasks" for 127.0.0.1 at 2015-02-15 12:45:58 +0800
+Processing by TasksController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mTask Load (0.0ms)[0m  SELECT "tasks".* FROM "tasks"  WHERE "tasks"."user_id" = ?  [["user_id", 1]]
+  Rendered tasks/index.html.erb within layouts/application (9.0ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 391ms (Views: 383.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/tasks.css?body=1" for 127.0.0.1 at 2015-02-15 12:45:58 +0800
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2015-02-15 12:45:58 +0800
+
+
+Started GET "/assets/devise.css?body=1" for 127.0.0.1 at 2015-02-15 12:45:58 +0800
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2015-02-15 12:45:58 +0800
+
+
+Started GET "/assets/twitter-bootstrap-static/bootstrap.css?body=1" for 127.0.0.1 at 2015-02-15 12:45:58 +0800
+
+
+Started GET "/assets/twitter-bootstrap-static/fontawesome.css?body=1" for 127.0.0.1 at 2015-02-15 12:45:58 +0800
+
+
+Started GET "/assets/font-awesome.css?body=1" for 127.0.0.1 at 2015-02-15 12:45:58 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-15 12:45:58 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-02-15 12:45:58 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-02-15 12:45:58 +0800
+
+
+Started GET "/assets/twitter/bootstrap/transition.js?body=1" for 127.0.0.1 at 2015-02-15 12:45:58 +0800
+
+
+Started GET "/assets/twitter/bootstrap/alert.js?body=1" for 127.0.0.1 at 2015-02-15 12:45:58 +0800
+
+
+Started GET "/assets/twitter/bootstrap/modal.js?body=1" for 127.0.0.1 at 2015-02-15 12:45:58 +0800
+
+
+Started GET "/assets/twitter/bootstrap/dropdown.js?body=1" for 127.0.0.1 at 2015-02-15 12:45:58 +0800
+
+
+Started GET "/assets/twitter/bootstrap/scrollspy.js?body=1" for 127.0.0.1 at 2015-02-15 12:45:58 +0800
+
+
+Started GET "/assets/twitter/bootstrap/tab.js?body=1" for 127.0.0.1 at 2015-02-15 12:45:58 +0800
+
+
+Started GET "/assets/twitter/bootstrap/tooltip.js?body=1" for 127.0.0.1 at 2015-02-15 12:45:58 +0800
+
+
+Started GET "/assets/twitter/bootstrap/popover.js?body=1" for 127.0.0.1 at 2015-02-15 12:45:58 +0800
+
+
+Started GET "/assets/twitter/bootstrap/button.js?body=1" for 127.0.0.1 at 2015-02-15 12:45:58 +0800
+
+
+Started GET "/assets/twitter/bootstrap/collapse.js?body=1" for 127.0.0.1 at 2015-02-15 12:45:59 +0800
+
+
+Started GET "/assets/twitter/bootstrap/carousel.js?body=1" for 127.0.0.1 at 2015-02-15 12:45:59 +0800
+
+
+Started GET "/assets/twitter/bootstrap/affix.js?body=1" for 127.0.0.1 at 2015-02-15 12:45:59 +0800
+
+
+Started GET "/assets/twitter/bootstrap.js?body=1" for 127.0.0.1 at 2015-02-15 12:45:59 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-02-15 12:45:59 +0800
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-02-15 12:45:59 +0800
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2015-02-15 12:45:59 +0800
+
+
+Started GET "/assets/tasks.js?body=1" for 127.0.0.1 at 2015-02-15 12:45:59 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-02-15 12:45:59 +0800
+
+
+Started GET "/tasks" for 127.0.0.1 at 2015-02-15 12:45:59 +0800
+Processing by TasksController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mTask Load (1.0ms)[0m  SELECT "tasks".* FROM "tasks"  WHERE "tasks"."user_id" = ?  [["user_id", 1]]
+  Rendered tasks/index.html.erb within layouts/application (8.0ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+Completed 200 OK in 392ms (Views: 382.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/twitter-bootstrap-static/bootstrap.css?body=1" for 127.0.0.1 at 2015-02-15 12:46:00 +0800
+
+
+Started GET "/assets/twitter-bootstrap-static/fontawesome.css?body=1" for 127.0.0.1 at 2015-02-15 12:46:00 +0800
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2015-02-15 12:46:00 +0800
+
+
+Started GET "/assets/devise.css?body=1" for 127.0.0.1 at 2015-02-15 12:46:00 +0800
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2015-02-15 12:46:00 +0800
+
+
+Started GET "/assets/tasks.css?body=1" for 127.0.0.1 at 2015-02-15 12:46:00 +0800
+
+
+Started GET "/assets/font-awesome.css?body=1" for 127.0.0.1 at 2015-02-15 12:46:00 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-15 12:46:00 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-02-15 12:46:00 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-02-15 12:46:00 +0800
+
+
+Started GET "/assets/twitter/bootstrap/transition.js?body=1" for 127.0.0.1 at 2015-02-15 12:46:00 +0800
+
+
+Started GET "/assets/twitter/bootstrap/alert.js?body=1" for 127.0.0.1 at 2015-02-15 12:46:00 +0800
+
+
+Started GET "/assets/twitter/bootstrap/modal.js?body=1" for 127.0.0.1 at 2015-02-15 12:46:00 +0800
+
+
+Started GET "/assets/twitter/bootstrap/dropdown.js?body=1" for 127.0.0.1 at 2015-02-15 12:46:00 +0800
+
+
+Started GET "/assets/twitter/bootstrap/scrollspy.js?body=1" for 127.0.0.1 at 2015-02-15 12:46:00 +0800
+
+
+Started GET "/assets/twitter/bootstrap/tab.js?body=1" for 127.0.0.1 at 2015-02-15 12:46:00 +0800
+
+
+Started GET "/assets/twitter/bootstrap/tooltip.js?body=1" for 127.0.0.1 at 2015-02-15 12:46:00 +0800
+
+
+Started GET "/assets/twitter/bootstrap/popover.js?body=1" for 127.0.0.1 at 2015-02-15 12:46:00 +0800
+
+
+Started GET "/assets/twitter/bootstrap/button.js?body=1" for 127.0.0.1 at 2015-02-15 12:46:00 +0800
+
+
+Started GET "/assets/twitter/bootstrap/collapse.js?body=1" for 127.0.0.1 at 2015-02-15 12:46:00 +0800
+
+
+Started GET "/assets/twitter/bootstrap/carousel.js?body=1" for 127.0.0.1 at 2015-02-15 12:46:00 +0800
+
+
+Started GET "/assets/twitter/bootstrap/affix.js?body=1" for 127.0.0.1 at 2015-02-15 12:46:00 +0800
+
+
+Started GET "/assets/twitter/bootstrap.js?body=1" for 127.0.0.1 at 2015-02-15 12:46:00 +0800
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-02-15 12:46:00 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-02-15 12:46:00 +0800
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2015-02-15 12:46:00 +0800
+
+
+Started GET "/assets/tasks.js?body=1" for 127.0.0.1 at 2015-02-15 12:46:00 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-02-15 12:46:00 +0800
+
+
+Started GET "/tasks/4/edit" for 127.0.0.1 at 2015-02-15 12:46:55 +0800
+Processing by TasksController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mTask Load (0.0ms)[0m  SELECT  "tasks".* FROM "tasks"  WHERE "tasks"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered tasks/_form.html.erb (26.0ms)
+  Rendered tasks/edit.html.erb within layouts/application (34.0ms)
+  Rendered layouts/_header.html.erb (2.0ms)
+Completed 200 OK in 376ms (Views: 364.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2015-02-15 12:46:59 +0800
+Processing by TasksController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mTask Load (0.0ms)[0m  SELECT "tasks".* FROM "tasks"  WHERE "tasks"."user_id" = ?  [["user_id", 1]]
+  Rendered tasks/index.html.erb within layouts/application (7.0ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 339ms (Views: 330.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2015-02-15 12:48:11 +0800
+Processing by TasksController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mTask Load (1.0ms)[0m  SELECT "tasks".* FROM "tasks"  WHERE "tasks"."user_id" = ?  [["user_id", 1]]
+  Rendered tasks/index.html.erb within layouts/application (6.0ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 534ms (Views: 524.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/twitter-bootstrap-static/fontawesome.css?body=1" for 127.0.0.1 at 2015-02-15 12:48:12 +0800
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2015-02-15 12:48:12 +0800
+
+
+Started GET "/assets/twitter-bootstrap-static/bootstrap.css?body=1" for 127.0.0.1 at 2015-02-15 12:48:12 +0800
+
+
+Started GET "/assets/tasks.css?body=1" for 127.0.0.1 at 2015-02-15 12:48:12 +0800
+
+
+Started GET "/assets/devise.css?body=1" for 127.0.0.1 at 2015-02-15 12:48:12 +0800
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2015-02-15 12:48:12 +0800
+
+
+Started GET "/assets/font-awesome.css?body=1" for 127.0.0.1 at 2015-02-15 12:48:12 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-15 12:48:12 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-02-15 12:48:12 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-02-15 12:48:12 +0800
+
+
+Started GET "/assets/twitter/bootstrap/transition.js?body=1" for 127.0.0.1 at 2015-02-15 12:48:12 +0800
+
+
+Started GET "/assets/twitter/bootstrap/alert.js?body=1" for 127.0.0.1 at 2015-02-15 12:48:12 +0800
+
+
+Started GET "/assets/twitter/bootstrap/modal.js?body=1" for 127.0.0.1 at 2015-02-15 12:48:12 +0800
+
+
+Started GET "/assets/twitter/bootstrap/dropdown.js?body=1" for 127.0.0.1 at 2015-02-15 12:48:12 +0800
+
+
+Started GET "/assets/twitter/bootstrap/scrollspy.js?body=1" for 127.0.0.1 at 2015-02-15 12:48:12 +0800
+
+
+Started GET "/assets/twitter/bootstrap/tab.js?body=1" for 127.0.0.1 at 2015-02-15 12:48:12 +0800
+
+
+Started GET "/assets/twitter/bootstrap/popover.js?body=1" for 127.0.0.1 at 2015-02-15 12:48:12 +0800
+
+
+Started GET "/assets/twitter/bootstrap/tooltip.js?body=1" for 127.0.0.1 at 2015-02-15 12:48:12 +0800
+
+
+Started GET "/assets/twitter/bootstrap/button.js?body=1" for 127.0.0.1 at 2015-02-15 12:48:12 +0800
+
+
+Started GET "/assets/twitter/bootstrap/collapse.js?body=1" for 127.0.0.1 at 2015-02-15 12:48:12 +0800
+
+
+Started GET "/assets/twitter/bootstrap/carousel.js?body=1" for 127.0.0.1 at 2015-02-15 12:48:12 +0800
+
+
+Started GET "/assets/twitter/bootstrap/affix.js?body=1" for 127.0.0.1 at 2015-02-15 12:48:12 +0800
+
+
+Started GET "/assets/twitter/bootstrap.js?body=1" for 127.0.0.1 at 2015-02-15 12:48:12 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-02-15 12:48:12 +0800
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-02-15 12:48:12 +0800
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2015-02-15 12:48:12 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-02-15 12:48:12 +0800
+
+
+Started GET "/assets/tasks.js?body=1" for 127.0.0.1 at 2015-02-15 12:48:12 +0800
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2015-02-15 12:48:16 +0800
+Processing by TasksController#new as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered tasks/_form.html.erb (29.0ms)
+  Rendered tasks/new.html.erb within layouts/application (92.0ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 506ms (Views: 498.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2015-02-15 12:48:19 +0800
+Processing by TasksController#index as HTML
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mTask Load (0.0ms)[0m  [1mSELECT "tasks".* FROM "tasks"  WHERE "tasks"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered tasks/index.html.erb within layouts/application (7.0ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+Completed 200 OK in 529ms (Views: 523.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2015-02-15 12:49:30 +0800
+Processing by TasksController#index as HTML
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mTask Load (1.0ms)[0m  [1mSELECT "tasks".* FROM "tasks"  WHERE "tasks"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered tasks/index.html.erb within layouts/application (4.0ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+Completed 200 OK in 283ms (Views: 278.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/twitter-bootstrap-static/bootstrap.css?body=1" for 127.0.0.1 at 2015-02-15 12:49:30 +0800
+
+
+Started GET "/assets/twitter-bootstrap-static/fontawesome.css?body=1" for 127.0.0.1 at 2015-02-15 12:49:31 +0800
+
+
+Started GET "/assets/devise.css?body=1" for 127.0.0.1 at 2015-02-15 12:49:31 +0800
+
+
+Started GET "/assets/tasks.css?body=1" for 127.0.0.1 at 2015-02-15 12:49:31 +0800
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2015-02-15 12:49:31 +0800
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2015-02-15 12:49:31 +0800
+
+
+Started GET "/assets/font-awesome.css?body=1" for 127.0.0.1 at 2015-02-15 12:49:31 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-15 12:49:31 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-02-15 12:49:31 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-02-15 12:49:31 +0800
+
+
+Started GET "/assets/twitter/bootstrap/alert.js?body=1" for 127.0.0.1 at 2015-02-15 12:49:31 +0800
+
+
+Started GET "/assets/twitter/bootstrap/transition.js?body=1" for 127.0.0.1 at 2015-02-15 12:49:31 +0800
+
+
+Started GET "/assets/twitter/bootstrap/modal.js?body=1" for 127.0.0.1 at 2015-02-15 12:49:31 +0800
+
+
+Started GET "/assets/twitter/bootstrap/dropdown.js?body=1" for 127.0.0.1 at 2015-02-15 12:49:31 +0800
+
+
+Started GET "/assets/twitter/bootstrap/scrollspy.js?body=1" for 127.0.0.1 at 2015-02-15 12:49:31 +0800
+
+
+Started GET "/assets/twitter/bootstrap/tab.js?body=1" for 127.0.0.1 at 2015-02-15 12:49:31 +0800
+
+
+Started GET "/assets/twitter/bootstrap/tooltip.js?body=1" for 127.0.0.1 at 2015-02-15 12:49:31 +0800
+
+
+Started GET "/assets/twitter/bootstrap/popover.js?body=1" for 127.0.0.1 at 2015-02-15 12:49:31 +0800
+
+
+Started GET "/assets/twitter/bootstrap/button.js?body=1" for 127.0.0.1 at 2015-02-15 12:49:31 +0800
+
+
+Started GET "/assets/twitter/bootstrap/collapse.js?body=1" for 127.0.0.1 at 2015-02-15 12:49:31 +0800
+
+
+Started GET "/assets/twitter/bootstrap/carousel.js?body=1" for 127.0.0.1 at 2015-02-15 12:49:31 +0800
+
+
+Started GET "/assets/twitter/bootstrap/affix.js?body=1" for 127.0.0.1 at 2015-02-15 12:49:31 +0800
+
+
+Started GET "/assets/twitter/bootstrap.js?body=1" for 127.0.0.1 at 2015-02-15 12:49:31 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-02-15 12:49:31 +0800
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-02-15 12:49:31 +0800
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2015-02-15 12:49:31 +0800
+
+
+Started GET "/assets/tasks.js?body=1" for 127.0.0.1 at 2015-02-15 12:49:31 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-02-15 12:49:31 +0800
+
+
+Started GET "/tasks" for 127.0.0.1 at 2015-02-15 12:51:37 +0800
+Processing by TasksController#index as HTML
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mTask Load (0.0ms)[0m  [1mSELECT "tasks".* FROM "tasks"  WHERE "tasks"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered tasks/index.html.erb within layouts/application (6.0ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 306ms (Views: 304.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/twitter-bootstrap-static/bootstrap.css?body=1" for 127.0.0.1 at 2015-02-15 12:51:38 +0800
+
+
+Started GET "/assets/twitter-bootstrap-static/fontawesome.css?body=1" for 127.0.0.1 at 2015-02-15 12:51:38 +0800
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2015-02-15 12:51:38 +0800
+
+
+Started GET "/assets/devise.css?body=1" for 127.0.0.1 at 2015-02-15 12:51:38 +0800
+
+
+Started GET "/assets/tasks.css?body=1" for 127.0.0.1 at 2015-02-15 12:51:38 +0800
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2015-02-15 12:51:38 +0800
+
+
+Started GET "/assets/font-awesome.css?body=1" for 127.0.0.1 at 2015-02-15 12:51:38 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-15 12:51:38 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-02-15 12:51:38 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-02-15 12:51:38 +0800
+
+
+Started GET "/assets/twitter/bootstrap/transition.js?body=1" for 127.0.0.1 at 2015-02-15 12:51:38 +0800
+
+
+Started GET "/assets/twitter/bootstrap/alert.js?body=1" for 127.0.0.1 at 2015-02-15 12:51:38 +0800
+
+
+Started GET "/assets/twitter/bootstrap/modal.js?body=1" for 127.0.0.1 at 2015-02-15 12:51:38 +0800
+
+
+Started GET "/assets/twitter/bootstrap/dropdown.js?body=1" for 127.0.0.1 at 2015-02-15 12:51:38 +0800
+
+
+Started GET "/assets/twitter/bootstrap/scrollspy.js?body=1" for 127.0.0.1 at 2015-02-15 12:51:38 +0800
+
+
+Started GET "/assets/twitter/bootstrap/tab.js?body=1" for 127.0.0.1 at 2015-02-15 12:51:38 +0800
+
+
+Started GET "/assets/twitter/bootstrap/tooltip.js?body=1" for 127.0.0.1 at 2015-02-15 12:51:38 +0800
+
+
+Started GET "/assets/twitter/bootstrap/popover.js?body=1" for 127.0.0.1 at 2015-02-15 12:51:38 +0800
+
+
+Started GET "/assets/twitter/bootstrap/button.js?body=1" for 127.0.0.1 at 2015-02-15 12:51:38 +0800
+
+
+Started GET "/assets/twitter/bootstrap/collapse.js?body=1" for 127.0.0.1 at 2015-02-15 12:51:38 +0800
+
+
+Started GET "/assets/twitter/bootstrap/carousel.js?body=1" for 127.0.0.1 at 2015-02-15 12:51:38 +0800
+
+
+Started GET "/assets/twitter/bootstrap/affix.js?body=1" for 127.0.0.1 at 2015-02-15 12:51:38 +0800
+
+
+Started GET "/assets/twitter/bootstrap.js?body=1" for 127.0.0.1 at 2015-02-15 12:51:38 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-02-15 12:51:38 +0800
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-02-15 12:51:38 +0800
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2015-02-15 12:51:38 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-02-15 12:51:38 +0800
+
+
+Started GET "/assets/tasks.js?body=1" for 127.0.0.1 at 2015-02-15 12:51:38 +0800
+
+
+Started GET "/tasks" for 127.0.0.1 at 2015-02-15 12:55:26 +0800
+Processing by TasksController#index as HTML
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mTask Load (1.0ms)[0m  [1mSELECT "tasks".* FROM "tasks"  WHERE "tasks"."user_id" = ? AND "tasks"."state" = 'to_do'[0m  [["user_id", 1]]
+  [1m[35mTask Load (1.0ms)[0m  SELECT "tasks".* FROM "tasks"  WHERE "tasks"."user_id" = ? AND "tasks"."state" = 'doing'  [["user_id", 1]]
+  [1m[36mTask Load (0.0ms)[0m  [1mSELECT "tasks".* FROM "tasks"  WHERE "tasks"."user_id" = ? AND "tasks"."state" = 'done'[0m  [["user_id", 1]]
+  Rendered tasks/index.html.erb within layouts/application (26.0ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+Completed 200 OK in 343ms (Views: 318.0ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/assets/twitter-bootstrap-static/bootstrap.css?body=1" for 127.0.0.1 at 2015-02-15 12:55:26 +0800
+
+
+Started GET "/assets/tasks.css?body=1" for 127.0.0.1 at 2015-02-15 12:55:27 +0800
+
+
+Started GET "/assets/twitter-bootstrap-static/fontawesome.css?body=1" for 127.0.0.1 at 2015-02-15 12:55:27 +0800
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2015-02-15 12:55:27 +0800
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2015-02-15 12:55:27 +0800
+
+
+Started GET "/assets/devise.css?body=1" for 127.0.0.1 at 2015-02-15 12:55:27 +0800
+
+
+Started GET "/assets/font-awesome.css?body=1" for 127.0.0.1 at 2015-02-15 12:55:27 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-15 12:55:27 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-02-15 12:55:27 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-02-15 12:55:27 +0800
+
+
+Started GET "/assets/twitter/bootstrap/transition.js?body=1" for 127.0.0.1 at 2015-02-15 12:55:27 +0800
+
+
+Started GET "/assets/twitter/bootstrap/alert.js?body=1" for 127.0.0.1 at 2015-02-15 12:55:27 +0800
+
+
+Started GET "/assets/twitter/bootstrap/modal.js?body=1" for 127.0.0.1 at 2015-02-15 12:55:27 +0800
+
+
+Started GET "/assets/twitter/bootstrap/dropdown.js?body=1" for 127.0.0.1 at 2015-02-15 12:55:27 +0800
+
+
+Started GET "/assets/twitter/bootstrap/scrollspy.js?body=1" for 127.0.0.1 at 2015-02-15 12:55:27 +0800
+
+
+Started GET "/assets/twitter/bootstrap/tab.js?body=1" for 127.0.0.1 at 2015-02-15 12:55:27 +0800
+
+
+Started GET "/assets/twitter/bootstrap/tooltip.js?body=1" for 127.0.0.1 at 2015-02-15 12:55:27 +0800
+
+
+Started GET "/assets/twitter/bootstrap/popover.js?body=1" for 127.0.0.1 at 2015-02-15 12:55:27 +0800
+
+
+Started GET "/assets/twitter/bootstrap/button.js?body=1" for 127.0.0.1 at 2015-02-15 12:55:27 +0800
+
+
+Started GET "/assets/twitter/bootstrap/carousel.js?body=1" for 127.0.0.1 at 2015-02-15 12:55:27 +0800
+
+
+Started GET "/assets/twitter/bootstrap/collapse.js?body=1" for 127.0.0.1 at 2015-02-15 12:55:27 +0800
+
+
+Started GET "/assets/twitter/bootstrap/affix.js?body=1" for 127.0.0.1 at 2015-02-15 12:55:27 +0800
+
+
+Started GET "/assets/twitter/bootstrap.js?body=1" for 127.0.0.1 at 2015-02-15 12:55:27 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-02-15 12:55:27 +0800
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-02-15 12:55:27 +0800
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2015-02-15 12:55:27 +0800
+
+
+Started GET "/assets/tasks.js?body=1" for 127.0.0.1 at 2015-02-15 12:55:27 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-02-15 12:55:27 +0800
+
+
+Started GET "/tasks/4/edit" for 127.0.0.1 at 2015-02-15 12:55:33 +0800
+Processing by TasksController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mTask Load (1.0ms)[0m  [1mSELECT  "tasks".* FROM "tasks"  WHERE "tasks"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered tasks/_form.html.erb (17.0ms)
+  Rendered tasks/edit.html.erb within layouts/application (22.0ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+Completed 200 OK in 368ms (Views: 288.0ms | ActiveRecord: 1.0ms)
+
+
+Started PATCH "/tasks/4" for 127.0.0.1 at 2015-02-15 12:55:37 +0800
+Processing by TasksController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dQ1mjq9Q3z30WrtNGdk0/GB+eVQizjNorN+3O+/D/0c=", "task"=>{"content"=>"I am a todo", "state"=>"doing"}, "commit"=>"Update Task", "id"=>"4"}
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mTask Load (1.0ms)[0m  [1mSELECT  "tasks".* FROM "tasks"  WHERE "tasks"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35m (1.0ms)[0m  begin transaction
+  [1m[36mSQL (1.0ms)[0m  [1mUPDATE "tasks" SET "state" = ?, "updated_at" = ? WHERE "tasks"."id" = 4[0m  [["state", "doing"], ["updated_at", "2015-02-15 04:55:37.663827"]]
+  [1m[35m (9.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/tasks/4
+Completed 302 Found in 30ms (ActiveRecord: 13.0ms)
+
+
+Started GET "/tasks/4" for 127.0.0.1 at 2015-02-15 12:55:37 +0800
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mTask Load (0.0ms)[0m  SELECT  "tasks".* FROM "tasks"  WHERE "tasks"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered tasks/show.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 269ms (Views: 263.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/twitter-bootstrap-static/bootstrap.css?body=1" for 127.0.0.1 at 2015-02-15 12:55:38 +0800
+
+
+Started GET "/assets/devise.css?body=1" for 127.0.0.1 at 2015-02-15 12:55:38 +0800
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2015-02-15 12:55:38 +0800
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2015-02-15 12:55:38 +0800
+
+
+Started GET "/assets/twitter-bootstrap-static/fontawesome.css?body=1" for 127.0.0.1 at 2015-02-15 12:55:38 +0800
+
+
+Started GET "/assets/tasks.css?body=1" for 127.0.0.1 at 2015-02-15 12:55:38 +0800
+
+
+Started GET "/assets/font-awesome.css?body=1" for 127.0.0.1 at 2015-02-15 12:55:38 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-15 12:55:38 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-02-15 12:55:38 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-02-15 12:55:38 +0800
+
+
+Started GET "/assets/twitter/bootstrap/transition.js?body=1" for 127.0.0.1 at 2015-02-15 12:55:38 +0800
+
+
+Started GET "/assets/twitter/bootstrap/alert.js?body=1" for 127.0.0.1 at 2015-02-15 12:55:38 +0800
+
+
+Started GET "/assets/twitter/bootstrap/modal.js?body=1" for 127.0.0.1 at 2015-02-15 12:55:38 +0800
+
+
+Started GET "/assets/twitter/bootstrap/dropdown.js?body=1" for 127.0.0.1 at 2015-02-15 12:55:38 +0800
+
+
+Started GET "/assets/twitter/bootstrap/scrollspy.js?body=1" for 127.0.0.1 at 2015-02-15 12:55:38 +0800
+
+
+Started GET "/assets/twitter/bootstrap/tab.js?body=1" for 127.0.0.1 at 2015-02-15 12:55:38 +0800
+
+
+Started GET "/assets/twitter/bootstrap/tooltip.js?body=1" for 127.0.0.1 at 2015-02-15 12:55:38 +0800
+
+
+Started GET "/assets/twitter/bootstrap/popover.js?body=1" for 127.0.0.1 at 2015-02-15 12:55:38 +0800
+
+
+Started GET "/assets/twitter/bootstrap.js?body=1" for 127.0.0.1 at 2015-02-15 12:55:38 +0800
+
+
+Started GET "/assets/twitter/bootstrap/collapse.js?body=1" for 127.0.0.1 at 2015-02-15 12:55:38 +0800
+
+
+Started GET "/assets/twitter/bootstrap/carousel.js?body=1" for 127.0.0.1 at 2015-02-15 12:55:38 +0800
+
+
+Started GET "/assets/twitter/bootstrap/affix.js?body=1" for 127.0.0.1 at 2015-02-15 12:55:38 +0800
+
+
+Started GET "/assets/twitter/bootstrap/button.js?body=1" for 127.0.0.1 at 2015-02-15 12:55:38 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-02-15 12:55:38 +0800
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-02-15 12:55:38 +0800
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2015-02-15 12:55:38 +0800
+
+
+Started GET "/assets/tasks.js?body=1" for 127.0.0.1 at 2015-02-15 12:55:38 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-02-15 12:55:38 +0800
+
+
+Started GET "/tasks" for 127.0.0.1 at 2015-02-15 12:55:41 +0800
+Processing by TasksController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mTask Load (0.0ms)[0m  SELECT "tasks".* FROM "tasks"  WHERE "tasks"."user_id" = ? AND "tasks"."state" = 'to_do'  [["user_id", 1]]
+  [1m[36mTask Load (1.0ms)[0m  [1mSELECT "tasks".* FROM "tasks"  WHERE "tasks"."user_id" = ? AND "tasks"."state" = 'doing'[0m  [["user_id", 1]]
+  [1m[35mTask Load (0.0ms)[0m  SELECT "tasks".* FROM "tasks"  WHERE "tasks"."user_id" = ? AND "tasks"."state" = 'done'  [["user_id", 1]]
+  Rendered tasks/index.html.erb within layouts/application (17.0ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+Completed 200 OK in 548ms (Views: 537.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2015-02-15 12:55:44 +0800
+Processing by TasksController#new as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered tasks/_form.html.erb (24.0ms)
+  Rendered tasks/new.html.erb within layouts/application (29.0ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 444ms (Views: 359.0ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/tasks" for 127.0.0.1 at 2015-02-15 12:55:53 +0800
+Processing by TasksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dQ1mjq9Q3z30WrtNGdk0/GB+eVQizjNorN+3O+/D/0c=", "task"=>{"content"=>"New task - yay", "state"=>"to_do"}, "commit"=>"Create Task"}
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (4.0ms)[0m  INSERT INTO "tasks" ("content", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?)  [["content", "New task - yay"], ["created_at", "2015-02-15 04:55:53.912757"], ["updated_at", "2015-02-15 04:55:53.912757"], ["user_id", 1]]
+  [1m[36m (17.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/tasks/5
+Completed 302 Found in 113ms (ActiveRecord: 21.0ms)
+
+
+Started GET "/tasks/5" for 127.0.0.1 at 2015-02-15 12:55:54 +0800
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mTask Load (0.0ms)[0m  [1mSELECT  "tasks".* FROM "tasks"  WHERE "tasks"."id" = ? LIMIT 1[0m  [["id", 5]]
+  Rendered tasks/show.html.erb within layouts/application (0.0ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 263ms (Views: 259.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/twitter-bootstrap-static/fontawesome.css?body=1" for 127.0.0.1 at 2015-02-15 12:55:54 +0800
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2015-02-15 12:55:54 +0800
+
+
+Started GET "/assets/devise.css?body=1" for 127.0.0.1 at 2015-02-15 12:55:54 +0800
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2015-02-15 12:55:54 +0800
+
+
+Started GET "/assets/tasks.css?body=1" for 127.0.0.1 at 2015-02-15 12:55:54 +0800
+
+
+Started GET "/assets/twitter-bootstrap-static/bootstrap.css?body=1" for 127.0.0.1 at 2015-02-15 12:55:54 +0800
+
+
+Started GET "/assets/font-awesome.css?body=1" for 127.0.0.1 at 2015-02-15 12:55:54 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-15 12:55:54 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-02-15 12:55:54 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-02-15 12:55:54 +0800
+
+
+Started GET "/assets/twitter/bootstrap/transition.js?body=1" for 127.0.0.1 at 2015-02-15 12:55:54 +0800
+
+
+Started GET "/assets/twitter/bootstrap/alert.js?body=1" for 127.0.0.1 at 2015-02-15 12:55:54 +0800
+
+
+Started GET "/assets/twitter/bootstrap/modal.js?body=1" for 127.0.0.1 at 2015-02-15 12:55:54 +0800
+
+
+Started GET "/assets/twitter/bootstrap/dropdown.js?body=1" for 127.0.0.1 at 2015-02-15 12:55:54 +0800
+
+
+Started GET "/assets/twitter/bootstrap/scrollspy.js?body=1" for 127.0.0.1 at 2015-02-15 12:55:54 +0800
+
+
+Started GET "/assets/twitter/bootstrap/tab.js?body=1" for 127.0.0.1 at 2015-02-15 12:55:54 +0800
+
+
+Started GET "/assets/twitter/bootstrap/tooltip.js?body=1" for 127.0.0.1 at 2015-02-15 12:55:54 +0800
+
+
+Started GET "/assets/twitter/bootstrap/popover.js?body=1" for 127.0.0.1 at 2015-02-15 12:55:54 +0800
+
+
+Started GET "/assets/twitter/bootstrap/button.js?body=1" for 127.0.0.1 at 2015-02-15 12:55:54 +0800
+
+
+Started GET "/assets/twitter/bootstrap/collapse.js?body=1" for 127.0.0.1 at 2015-02-15 12:55:54 +0800
+
+
+Started GET "/assets/twitter/bootstrap/carousel.js?body=1" for 127.0.0.1 at 2015-02-15 12:55:54 +0800
+
+
+Started GET "/assets/twitter/bootstrap/affix.js?body=1" for 127.0.0.1 at 2015-02-15 12:55:54 +0800
+
+
+Started GET "/assets/twitter/bootstrap.js?body=1" for 127.0.0.1 at 2015-02-15 12:55:54 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-02-15 12:55:54 +0800
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-02-15 12:55:54 +0800
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2015-02-15 12:55:54 +0800
+
+
+Started GET "/assets/tasks.js?body=1" for 127.0.0.1 at 2015-02-15 12:55:54 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-02-15 12:55:54 +0800
+
+
+Started GET "/tasks" for 127.0.0.1 at 2015-02-15 12:55:56 +0800
+Processing by TasksController#index as HTML
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mTask Load (0.0ms)[0m  [1mSELECT "tasks".* FROM "tasks"  WHERE "tasks"."user_id" = ? AND "tasks"."state" = 'to_do'[0m  [["user_id", 1]]
+  [1m[35mTask Load (0.0ms)[0m  SELECT "tasks".* FROM "tasks"  WHERE "tasks"."user_id" = ? AND "tasks"."state" = 'doing'  [["user_id", 1]]
+  [1m[36mTask Load (1.0ms)[0m  [1mSELECT "tasks".* FROM "tasks"  WHERE "tasks"."user_id" = ? AND "tasks"."state" = 'done'[0m  [["user_id", 1]]
+  Rendered tasks/index.html.erb within layouts/application (7.0ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+Completed 200 OK in 263ms (Views: 259.0ms | ActiveRecord: 1.0ms)
