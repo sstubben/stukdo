@@ -1,0 +1,9 @@
+<tr>
+	<td><%= link_to task.content, edit_task_path(task) %></td>
+	<% if task.state == 'to_to' || task.state =='done'%>
+		<td><%= link_to "Mark task as 'Doing'", change_task_path(task, state: 'doing'), method: :put %></td>
+	<% else %>	
+    	<td><%= link_to "Mark task as 'To do'", change_task_path(task, state: 'to_do'), method: :put  %></td>
+    	<td><%= link_to "Mark task as 'Done'", change_task_path(task, state: 'done'), method: :put %></td>
+    <% end %>
+</tr>

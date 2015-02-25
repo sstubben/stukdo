@@ -1,6 +1,5 @@
 <h1>Editing task</h1>
 
 <%= render 'form' %>
-
-<%= link_to 'Show', @task %> |
-<%= link_to 'Back', tasks_path %>
+<br />
+<p><%= link_to '<i class="fa fa-trash-o"></i> Destroy'.html_safe, @task, method: :delete, data: { confirm: 'Are you sure?' } %> | <%= link_to 'Back', tasks_path %></p>
