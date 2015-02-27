@@ -1,9 +1,19 @@
-<tr>
-	<td><%= link_to task.content, edit_task_path(task) %></td>
-	<% if task.state == 'to_to' || task.state =='done'%>
-		<td><%= link_to "Mark task as 'Doing'", change_task_path(task, state: 'doing'), method: :put %></td>
-	<% else %>	
-    	<td><%= link_to "Mark task as 'To do'", change_task_path(task, state: 'to_do'), method: :put  %></td>
-    	<td><%= link_to "Mark task as 'Done'", change_task_path(task, state: 'done'), method: :put %></td>
+<div class="panel panel-primary">
+	
+	<div class="panel-heading">Task created <%= time_ago_in_words(task.created_at)%> ago</div>
+	<div class="panel-body">
+		<%= link_to task.content, edit_task_path(task) %>
+	</div>
+	<div class="panel-footer text-center">
+	<% if task.state == 'to_do' %>
+		<%= link_to '<i class="fa fa-arrow-right"></i>'.html_safe, change_task_path(task, state: 'doing'), method: :put, class: "btn btn-warning" %>
+	<% elsif task.state == 'doing' %>
+    	<%= link_to '<i class="fa fa-arrow-left"></i>'.html_safe, change_task_path(task, state: 'to_do'), method: :put, class: "btn btn-warning"  %>
+    	<%= link_to '<i class="fa fa-arrow-right"></i>'.html_safe, change_task_path(task, state: 'done'), method: :put, class: "btn btn-warning" %>
+    <% else %>
+    	<%= link_to '<i class="fa fa-arrow-left"></i>'.html_safe, change_task_path(task, state: 'doing'), method: :put, class: "btn btn-warning" %>
     <% end %>
-</tr>
+		
+		
+	</div>
+</div>

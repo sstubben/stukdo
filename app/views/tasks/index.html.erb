@@ -1,49 +1,19 @@
-<h1>To-do</h1>
-
-<table class="table table-hover">
-  <thead>
-    <tr>
-      <th>Content</th>
-      
-    </tr>
-  </thead>
-
-  <tbody>
-	<%= render @to_do %>
-  </tbody>
-</table>
-
-<br>
-
-<h1>Doing</h1>
-
-<table class="table table-hover">
-  <thead>
-    <tr>
-      <th>Content</th>
-    </tr>
-  </thead>
-
-  <tbody>
-	<%= render @doing %>
-  </tbody>
-</table>
-
-<br>
-
-<h1>Done</h1>
-
-<table class="table table-hover">
-  <thead>
-    <tr>
-      <th>Content</th>
-    </tr>
-  </thead>
-
-  <tbody>
-	<%= render @done %>
-  </tbody>
-</table>
+<div class="row">
+	<div class="col-md-4">
+		<h2 class="text-center">Todo</h2>
+		<%= render @to_do %>
+	</div>
+	
+	<div class="col-md-4">
+		<h2 class="text-center">Doing</h2>
+		<%= render @doing %>		
+	</div>
+	
+	<div class="col-md-4">
+		<h2 class="text-center">Done</h2>
+		<%= render @done %>
+	</div>
+</div>
 
 <br>
 
